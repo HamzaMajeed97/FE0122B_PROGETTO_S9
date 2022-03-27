@@ -1,0 +1,16 @@
+<div>
+  <ng-container  *ngIf="list; else elseTemplate">
+    <div *ngIf="list.length > 0; else elseNoTask">
+      <div *ngFor="let pippo of list; let i = index">
+        <div> {{ pippo.title }}</div>
+      </div>
+    </div>
+  </ng-container>
+
+
+  <ng-template #elseTemplate>
+    <p>Recupero Task...</p>
+  </ng-template>
+</div>
+
+<ng-template #elseNoTask> <p>Non ci sono task completati</p> </ng-template>

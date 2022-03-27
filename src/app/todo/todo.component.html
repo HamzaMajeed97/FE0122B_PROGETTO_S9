@@ -1,0 +1,36 @@
+
+
+<div>
+
+
+
+  <ng-container *ngIf="list ; else elseTemplate ">
+
+
+      <div *ngIf="list.length > 0; else elseNoTask">
+      <div *ngFor="let pippo of list; let i = index"  >
+        <div >
+          {{pippo.title}}
+          <button class="lista" (click)="completeTask(pippo,i)" >✅</button>
+        </div>
+
+      </div>
+    </div>
+
+
+  </ng-container>
+
+  <ng-template #elseTemplate>
+    <p>Recupero Tasks...</p>
+
+  </ng-template>
+
+</div>
+
+  <input type="text" [(ngModel)]="text">
+  <button class="bottone " (click)="aggiungi1()">Aggiungi</button>
+
+  <ng-template #elseNoTask>
+    <p>Oops, non ci sono Task</p>
+  </ng-template>
+
